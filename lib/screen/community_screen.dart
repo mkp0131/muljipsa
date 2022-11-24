@@ -15,17 +15,31 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _MainMenuList(),
-        SizedBox(
-          height: 10.0,
-        ),
-        _BannerSection(),
-        SizedBox(
-          height: 10.0,
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _MainMenuList(),
+          SizedBox(
+            height: 10.0,
+          ),
+          _BannerSection(),
+          SizedBox(
+            height: 10.0,
+          ),
+          _BoarderBox(),
+          SizedBox(
+            height: 10,
+          ),
+          _BoarderBox(),
+          SizedBox(
+            height: 10,
+          ),
+          _BoarderBox(),
+          SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -81,7 +95,7 @@ class _MainMenuList extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -140,6 +154,72 @@ class _BannerSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Image.asset('assets/images/banner1.jpeg'),
+    );
+  }
+}
+
+class _BoarderBox extends StatelessWidget {
+  const _BoarderBox({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              '공지사항',
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            _BoarderItem(),
+            _BoarderItem(),
+            _BoarderItem(),
+            _BoarderItem(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _BoarderItem() {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Text(
+                'iPhone을 완전히 새로운 방식으로 다룰 수 있게 해주는 Dynamic Island',
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Color(0xff666666),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              '2022.11.22',
+              style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xffcccccc),
+                  fontWeight: FontWeight.w300),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

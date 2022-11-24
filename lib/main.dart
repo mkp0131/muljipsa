@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
         '/invite_friend': (context) => InviteFriend(),
         // 커뮤니티
         '/community': (context) => CommunityScreen(),
+        '/boarder': (context) => CommunityScreen(),
       },
     );
   }

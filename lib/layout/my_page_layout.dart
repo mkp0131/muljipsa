@@ -22,6 +22,7 @@ class MyPageLayout extends StatelessWidget {
         elevation: 0, // boxshadow 없애기
       ),
       body: SafeArea(
+        bottom: false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
