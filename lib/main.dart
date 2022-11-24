@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:muljipsa/screen/boarder_screen.dart';
+import 'package:muljipsa/screen/boarder_view.dart';
+import 'package:muljipsa/screen/boarder_write.dart';
 import 'package:muljipsa/screen/community_screen.dart';
 import 'package:muljipsa/screen/home_screen.dart';
 import 'package:muljipsa/screen/invite_friend_screen.dart';
@@ -51,7 +54,9 @@ class MyApp extends StatelessWidget {
         '/invite_friend': (context) => InviteFriend(),
         // 커뮤니티
         '/community': (context) => CommunityScreen(),
-        '/boarder': (context) => CommunityScreen(),
+        '/boarder': (context) => Boarder(),
+        '/boarder_view': (context) => BoarderView(),
+        '/boarder_write': (context) => BoarderWrite(),
       },
     );
   }

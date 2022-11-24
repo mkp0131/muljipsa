@@ -66,9 +66,14 @@ class _MainMenuList extends StatelessWidget {
                     ['assets/images/menuIcon4.webp', '수입 Tip'],
                   ]
                       .map(
-                        (item) => _MainMenuItem(
-                          imgUrl: item[0],
-                          text: item[1],
+                        (item) => GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/boarder');
+                          },
+                          child: _MainMenuItem(
+                            imgUrl: item[0],
+                            text: item[1],
+                          ),
                         ),
                       )
                       .toList(),
